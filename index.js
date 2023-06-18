@@ -11,57 +11,76 @@ function getComputerChoice(){
 }
 
 
-function round(){
-    let PlaySel=prompt("Enter your play(rock/paper/scissor)");
-    let a=getComputerChoice()
 
-    if(PlaySel.toLowerCase()==="rock"){
+let a=getComputerChoice()
+
+function Rock(){
+    const result=document.querySelector('.result');
         if(a==="rock"){
-            console.log("It is a draw!");
+            const display=document.createElement("div");
+            display.innerText="It is a draw";
+            result.appendChild(display);
         }
         else if(a==="paper"){
-            console.log("You LOSE!! Paper beats Rock.");
+            const display=document.createElement("div");
+            display.innerText="YOU LOSE!!! Pper beats Rock";
+            result.appendChild(display);
             ++Comp;
         }
         else if(a==="scissor"){
-            console.log("You WIN!! Rock beats Scissor");
+            const display=document.createElement("div");
+            display.innerText="YOU WIN!!! Rock beats Scissor";
+            result.appendChild(display);
             ++Play;
         }
     }
 
-    else if(PlaySel.toLowerCase()==="paper"){
+    function Paper(){
+        const result=document.querySelector('.result');
         if(a==="paper"){
-            console.log("It is a draw!");
+            const display=document.createElement("div");
+            display.innerText="It is a draw";
+            result.appendChild(display);
         }
         else if(a==="scissor"){
-            console.log("You LOSE!! Scissor beats Paper.");
+            const display=document.createElement("div");
+            display.innerText="YOU LOSE!!! Scissor beats Paper";
+            result.appendChild(display);
             ++Comp;
         }
         else if(a==="rock"){
-            console.log("You WIN!! Paper beats Rock");
+            const display=document.createElement("div");
+            display.innerText="YOU WIN!!! Paper beats Rock";
+            result.appendChild(display);
             ++Play;
         }
     }
 
-    else if(PlaySel.toLowerCase()==="scissor"){
+    function Scissor(){
+        const result=document.querySelector('.result');
         if(a==="scissor"){
-            console.log("It is a draw!");
+            const display=document.createElement("div");
+            display.innerText="It is a draw";
+            result.appendChild(display);
         }
         else if(a==="rock"){
-            console.log("You LOSE!! Rock beats Scissor.");
+            const display=document.createElement("div");
+            display.innerText="YOU LOSE!!! Rock beats Scissor";
+            result.appendChild(display);
             ++Comp;
         }
         else if(a==="paper"){
-            console.log("You WIN!! Scissor beats Paper");
+            const display=document.createElement("div");
+            display.innerText="YOU WIN!!! Scissor beats Paper";
+            result.appendChild(display);
             ++Play;
         }
     }
-}
 
 let Comp=0;
 let Play=0;
 
-function game(){
+/*function game(){
     while((Comp+Play)<5){
         if(Comp>2){
             console.log("The Computer has won");
@@ -79,5 +98,12 @@ function game(){
     else{
         console.log("Player wins the game");
     }
-}
-game();
+}*/
+const rock=document.querySelector('.rock');
+const paper=document.querySelector('.paper');
+const scissor=document.querySelector('.scissor');
+
+rock.addEventListener('click',Rock);
+paper.addEventListener('click',Paper);
+scissor.addEventListener('click',Scissor);
+
